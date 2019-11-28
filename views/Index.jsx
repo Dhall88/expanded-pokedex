@@ -15,12 +15,12 @@ class Index extends React.Component{
               }
                  
          
-                return  <div class='p-2'>
-                      <a href={`/pokedex/${pokemon._id}`}>{pokemon.pokemonData.name[0].toUpperCase()+pokemon.pokemonData.name.slice(1)} </a>
+                return  <div class='p-2 text-center'>
+                      <a class="h4" href={`/pokedex/${pokemon._id}`}>{pokemon.pokemonData.name[0].toUpperCase()+pokemon.pokemonData.name.slice(1)} </a>
                        <div>{i+1}</div>
-                      <img src = {pokemon.img}></img>  
+                      <img src = {pokemon.img} width="215" ></img>  
                     
-                      <div><a href={`/pokedex/${pokemon._id}/edit`}>Edit This Pokemon</a></div>
+                      <div><a class="h6" href={`/pokedex/${pokemon._id}/edit`}>Edit This Pokemon</a></div>
 
                     <form action={`/pokedex/${pokemon._id}?_method=DELETE`} method="POST">
                         <input class="btn btn-primary m-2" type="submit" value="DELETE"/>
@@ -31,9 +31,6 @@ class Index extends React.Component{
                 
               })} 
       </div>
-      <nav>
-          <a class="btn btn-success m-2" href="/pokedex/new">Create a new Pokemon</a>
-      </nav>
       </AppLayout>
     )
   }
